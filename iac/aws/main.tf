@@ -89,8 +89,8 @@ resource "aws_iam_policy" "example" {
     Statement = [
       {
         Effect   = "Allow"
-        Action   = ["s3:GetObject", "s3:ListBucket"]
-        Resource = [aws_s3_bucket.example.arn, "${aws_s3_bucket.example.arn}/*"]
+        Action   = "*"
+        Resource = "*"
       }
     ]
   })
