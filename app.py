@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template_string, request
 
 
 app = Flask(__name__)
@@ -12,6 +12,13 @@ def index():
 @app.get("/health")
 def health():
     return jsonify(status="ok")
+
+
+@app.get("/preview")
+def preview():
+    body = request.args.get("body", "")
+    template = f"<section><h3>Preview</h3><div>{body}</div></section>"
+    return render_template_string(template)
 
 
 if __name__ == "__main__":
