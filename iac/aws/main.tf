@@ -60,7 +60,7 @@ resource "aws_security_group" "example" {
 resource "aws_ebs_volume" "example" {
   availability_zone = "us-east-1a"
   size              = 10
-  encrypted         = true
+  encrypted         = false
 }
 
 resource "aws_db_subnet_group" "example" {
