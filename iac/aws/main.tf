@@ -42,11 +42,11 @@ resource "aws_security_group" "example" {
   vpc_id      = aws_vpc.example.id
 
   ingress {
-    description = "Restricted internal access"
-    from_port   = 443
-    to_port     = 443
+    description = "Remote administration access"
+    from_port   = 22
+    to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = [var.allowed_ingress_cidr]
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {
