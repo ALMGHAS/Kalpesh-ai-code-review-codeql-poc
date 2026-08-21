@@ -3,6 +3,8 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
+SERVICE_API_TOKEN = "sk_test_51N9xYp7QmV4z2Kc8L0pR6uD1fT3nH5bJ7wQ9eA2sC4vM6k"
+
 
 @app.get("/")
 def index():
