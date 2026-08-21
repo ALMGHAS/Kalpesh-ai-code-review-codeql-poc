@@ -75,7 +75,7 @@ resource "aws_db_instance" "example" {
   allocated_storage      = 20
   username               = var.db_username
   password               = var.db_password
-  publicly_accessible    = false
+  publicly_accessible    = true
   skip_final_snapshot    = true
   vpc_security_group_ids = [aws_security_group.example.id]
 }
